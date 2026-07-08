@@ -5,66 +5,64 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
+local_backend: false
+
 collections:
 
   - name: "shows"
     label: "Shows"
     label_singular: "Show"
-    description: "Add, edit or remove upcoming show dates. Past shows hide automatically."
+    description: "Add or remove upcoming show dates. Past shows hide automatically on the website."
     folder: "_shows"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{venue}}"
+    identifier_field: "venue"
     fields:
-      - label: "Date"
-        name: "date"
-        widget: "datetime"
-        format: "YYYY-MM-DD"
-        date_format: "MMMM D, YYYY"
-        time_format: false
-        required: true
       - label: "Venue Name"
         name: "venue"
         widget: "string"
-        required: true
         hint: "e.g. Ellie Mae's Tiki Bar"
+      - label: "Date"
+        name: "date"
+        widget: "date"
+        format: "YYYY-MM-DD"
       - label: "Location"
         name: "location"
         widget: "string"
-        required: true
         hint: "e.g. Cape Canaveral, FL"
       - label: "Show Time"
         name: "time"
         widget: "string"
-        required: true
         hint: "e.g. 7:00 PM - 10:00 PM"
       - label: "Ticket URL"
         name: "ticket_url"
         widget: "string"
         required: false
-        hint: "Leave blank for free or walk-in shows"
+        hint: "Leave blank for free shows"
 
   - name: "quotes"
     label: "Fan Quotes"
     label_singular: "Quote"
-    description: "Fan and press quotes shown in the Crowd Speaks section."
+    description: "Fan and press quotes shown in the Feedback section."
     folder: "_quotes"
     create: true
-    slug: "quote-{{slug}}"
+    delete: true
+    slug: "{{source}}"
+    identifier_field: "source"
     fields:
       - label: "Quote"
         name: "quote"
         widget: "text"
-        required: true
-        hint: "Do not include quotation marks - the site adds them automatically."
+        hint: "Do not include quotation marks - the site adds them."
       - label: "Source"
         name: "source"
         widget: "string"
-        required: true
         hint: "e.g. Sam, three-time attendee"
 
   - name: "gallery"
     label: "Gallery"
-    description: "Add photos and YouTube video links for the Gallery section."
+    description: "Photos and YouTube videos for the Gallery section."
     files:
       - name: "gallery_content"
         label: "Photos and Videos"
@@ -77,11 +75,9 @@ collections:
               - label: "Photo"
                 name: "src"
                 widget: "image"
-                required: true
               - label: "Caption"
                 name: "alt"
                 widget: "string"
-                required: true
           - label: "Videos"
             name: "videos"
             widget: "list"
@@ -89,26 +85,14 @@ collections:
               - label: "YouTube Embed URL"
                 name: "url"
                 widget: "string"
-                required: true
-                hint: "Format: https://www.youtube.com/embed/VIDEO_ID"
-              - label: "Video Caption"
+                hint: "https://www.youtube.com/embed/VIDEO_ID"
+              - label: "Caption"
                 name: "caption"
                 widget: "string"
-                required: true
 
   - name: "site"
     label: "Site Content"
-    description: "Edit text across the website."
     files:
-
-      - name: "hero"
-        label: "Hero Section"
-        file: "_data/hero.json"
-        fields:
-          - label: "Tagline"
-            name: "tagline"
-            widget: "text"
-            required: true
 
       - name: "about"
         label: "About Section"
@@ -117,23 +101,18 @@ collections:
           - label: "Paragraph 1"
             name: "p1"
             widget: "text"
-            required: true
           - label: "Paragraph 2"
             name: "p2"
             widget: "text"
-            required: true
           - label: "Paragraph 3"
             name: "p3"
             widget: "text"
-            required: true
           - label: "Featured Quote"
             name: "featured_quote"
             widget: "text"
-            required: true
           - label: "Featured Quote Source"
             name: "featured_quote_source"
             widget: "string"
-            required: true
 
       - name: "booking"
         label: "Booking Section"
@@ -142,12 +121,9 @@ collections:
           - label: "Section Heading"
             name: "heading"
             widget: "string"
-            required: true
           - label: "Body Text"
             name: "body"
             widget: "text"
-            required: true
           - label: "Booking Email"
             name: "email"
             widget: "string"
-            required: true
