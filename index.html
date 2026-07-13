@@ -1389,16 +1389,29 @@
       ]);
     }
 
-        // ── Quotes ────────────────────────────────────────────────────────
-    function loadQuotes() {
-      renderQuotes([
+        // ── Load quotes from GitHub raw ───────────────────────────────────
+    const GITHUB_RAW = "https://raw.githubusercontent.com/SaylorandtheCaptains/SATC-Website-2/main/data/";
+
+    async function loadQuotes() {
+      try {
+        const res = await fetch(GITHUB_RAW + "quotes.json?t=" + Date.now());
+        const data = await res.json();
+        const quotes = data.root || (Array.isArray(data) ? data : []);
+        renderQuotes(quotes.length ? quotes : getDefaultQuotes());
+      } catch {
+        renderQuotes(getDefaultQuotes());
+      }
+    }
+
+    function getDefaultQuotes() {
+      return [
         { quote: "People were literally walking away from the downtown festival to come hear Saylor sing.", source: "Sally, longtime patron at Ellie Mae's" },
         { quote: "They've got something magical. I can see them as stars already.", source: "Fred, first-timer at Space Coast Harley-Davidson" },
         { quote: "They're amazing. Every time I see them, they just get better. I absolutely love them.", source: "Sam, three-time attendee" },
         { quote: "This band is going to be famous. You can just feel it.", source: "Jim, fan at Ellie Mae's Tiki Bar" },
         { quote: "We can say we knew them before they got famous!", source: "Mindy and Jim, loyal fans" },
         { quote: "The best I've heard around here.", source: "Suzanne, Space Coast music lover" }
-      ]);
+      ];
     }
 
     // ── Render shows ─────────────────────────────────────────────────
@@ -1538,9 +1551,19 @@
       if (e.key === 'ArrowRight') lbNav(1);
     });
 
-    // ── Gallery data (embedded) ───────────────────────────────────────
-    function loadGallery() {
-      renderGallery({
+    // ── Load gallery from GitHub raw ──────────────────────────────────
+    async function loadGallery() {
+      try {
+        const res = await fetch(GITHUB_RAW + "gallery.json?t=" + Date.now());
+        const data = await res.json();
+        renderGallery(data);
+      } catch {
+        renderGallery(getDefaultGallery());
+      }
+    }
+
+    function getDefaultGallery() {
+      return {
         photos: [
           { src: "images/Saylor_15.jpg", alt: "Saylor performing live" },
           { src: "images/Saylor_6.jpg",  alt: "The band at sunset rooftop show" },
@@ -1558,12 +1581,12 @@
           { src: "images/Saylor_18.jpg", alt: "Guitar close-up — Louis Barr Photography" },
           { src: "images/Saylor_20.jpg", alt: "Band photo on the stairs" },
           { src: "images/Saylor_8.jpg",  alt: "Heavy State of Blue — original song" },
-          { src: "images/Saylor_21.jpg", alt: "Saylor Werneth — Louis Barr Photography" }
+          { src: "images/Saylor_21.jpg", alt: "Saylor — Louis Barr Photography" }
         ],
         videos: [
           { url: "https://www.youtube.com/embed/el_gY7-gFt4?si=6YKFVthTTwJgsWjP", caption: "Live at Space Coast Harley-Davidson" }
         ]
-      });
+      };
     }
 
     function renderGallery(data) {
@@ -1634,9 +1657,25 @@
       });
     }
 
+    // ── Load about section ────────────────────────────────────────────
+    async function loadAbout() {
+      try {
+        const res = await fetch(GITHUB_RAW + 'about.json?t=' + Date.now());
+        const d = await res.json();
+        if (d.p1) document.getElementById('about-p1').innerHTML = d.p1;
+        if (d.p2) document.getElementById('about-p2').innerHTML = d.p2;
+        if (d.p3) document.getElementById('about-p3').innerHTML = d.p3;
+        if (d.featured_quote) document.getElementById('featured-quote').textContent = '“' + d.featured_quote + '”';
+        if (d.featured_quote_source) document.getElementById('featured-quote-source').textContent = '— ' + d.featured_quote_source;
+      } catch {
+        // Falls back to hardcoded HTML content already in the page
+      }
+    }
+
     // ── Init ──────────────────────────────────────────────────────────
     loadShows();
     loadQuotes();
+    loadAbout();
     loadGallery();
   </script>
 
