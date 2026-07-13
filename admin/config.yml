@@ -1,0 +1,119 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+
+  - name: "website"
+    label: "Website Content"
+    files:
+
+      - name: "shows"
+        label: "Shows"
+        file: "data/shows.json"
+        fields:
+          - label: "Shows"
+            name: "root"
+            widget: "list"
+            fields:
+              - label: "Date"
+                name: "date"
+                widget: "string"
+                hint: "Enter date as YYYY-MM-DD e.g. 2026-08-15"
+              - label: "Venue Name"
+                name: "venue"
+                widget: "string"
+                hint: "e.g. Ellie Mae's Tiki Bar"
+              - label: "Location"
+                name: "location"
+                widget: "string"
+                hint: "e.g. Cape Canaveral, FL"
+              - label: "Show Time"
+                name: "time"
+                widget: "string"
+                hint: "e.g. 7:00 PM - 10:00 PM"
+              - label: "Ticket URL"
+                name: "ticket_url"
+                widget: "string"
+                required: false
+                hint: "Leave blank for free shows"
+
+      - name: "quotes"
+        label: "Fan Quotes"
+        file: "data/quotes.json"
+        fields:
+          - label: "Quotes"
+            name: "root"
+            widget: "list"
+            fields:
+              - label: "Quote"
+                name: "quote"
+                widget: "text"
+                hint: "Do not include quotation marks"
+              - label: "Source"
+                name: "source"
+                widget: "string"
+                hint: "e.g. Sam, three-time attendee"
+
+      - name: "gallery"
+        label: "Gallery"
+        file: "data/gallery.json"
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            fields:
+              - label: "Photo"
+                name: "src"
+                widget: "image"
+              - label: "Caption"
+                name: "alt"
+                widget: "string"
+          - label: "Videos"
+            name: "videos"
+            widget: "list"
+            fields:
+              - label: "YouTube Embed URL"
+                name: "url"
+                widget: "string"
+                hint: "https://www.youtube.com/embed/VIDEO_ID"
+              - label: "Caption"
+                name: "caption"
+                widget: "string"
+
+      - name: "about"
+        label: "About Section"
+        file: "data/about.json"
+        fields:
+          - label: "Paragraph 1"
+            name: "p1"
+            widget: "text"
+          - label: "Paragraph 2"
+            name: "p2"
+            widget: "text"
+          - label: "Paragraph 3"
+            name: "p3"
+            widget: "text"
+          - label: "Featured Quote"
+            name: "featured_quote"
+            widget: "text"
+          - label: "Featured Quote Source"
+            name: "featured_quote_source"
+            widget: "string"
+
+      - name: "booking"
+        label: "Booking Section"
+        file: "data/booking.json"
+        fields:
+          - label: "Section Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Body Text"
+            name: "body"
+            widget: "text"
+          - label: "Booking Email"
+            name: "email"
+            widget: "string"
