@@ -3,8 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saylor and The Captains — Cocoa Beach, FL</title>
-  <meta name="description" content="Saylor and The Captains are a four-piece coastal rock band from Cocoa Beach, Florida. Powerhouse vocals, fiery guitars and live energy you won't forget." />
+  <title>Saylor and The Captains — Coastal Rock Band | Cocoa Beach, FL</title>
+  <meta name="description" content="Saylor and The Captains are a four-piece coastal rock band from Cocoa Beach, Florida. Powerhouse vocals, fiery guitars and live energy you won't forget. Book us for bars, festivals and private events on Florida's Space Coast." />
+
+  <!-- SEO: Canonical -->
+  <link rel="canonical" href="https://www.saylorandthecaptains.com/" />
+
+  <!-- SEO: Open Graph (Facebook, Instagram link previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.saylorandthecaptains.com/" />
+  <meta property="og:title" content="Saylor and The Captains — Coastal Rock Band | Cocoa Beach, FL" />
+  <meta property="og:description" content="Four-piece coastal rock band from Cocoa Beach, Florida. Powerhouse vocals, fiery guitars and live energy you won't forget." />
+  <meta property="og:image" content="https://www.saylorandthecaptains.com/images/hero_bg.jpg" />
+  <meta property="og:site_name" content="Saylor and The Captains" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- SEO: Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Saylor and The Captains — Coastal Rock Band | Cocoa Beach, FL" />
+  <meta name="twitter:description" content="Four-piece coastal rock band from Cocoa Beach, Florida. Powerhouse vocals, fiery guitars and live energy you won't forget." />
+  <meta name="twitter:image" content="https://www.saylorandthecaptains.com/images/hero_bg.jpg" />
+
+  <!-- SEO: Structured data (Google rich results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Saylor and The Captains",
+    "description": "Four-piece coastal rock band from Cocoa Beach, Florida.",
+    "genre": ["Rock", "Coastal Rock", "Indie Rock"],
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Cocoa Beach, Florida"
+    },
+    "url": "https://www.saylorandthecaptains.com",
+    "image": "https://www.saylorandthecaptains.com/images/hero_bg.jpg",
+    "sameAs": [
+      "https://www.instagram.com/saylorandthecaptains/",
+      "https://www.facebook.com/profile.php?id=61572371564226",
+      "https://www.youtube.com/channel/UC3FqEUDJWzZ4nsleW61ZFbg"
+    ],
+    "member": [
+      { "@type": "OrganizationRole", "member": { "@type": "Person", "name": "Saylor" }, "roleName": "Vocalist" },
+      { "@type": "OrganizationRole", "member": { "@type": "Person", "name": "David" }, "roleName": "Lead Guitar" },
+      { "@type": "OrganizationRole", "member": { "@type": "Person", "name": "Nick" }, "roleName": "Bass" },
+      { "@type": "OrganizationRole", "member": { "@type": "Person", "name": "Caleb" }, "roleName": "Drums" }
+    ]
+  }
+  </script>
+
+  <!-- SEO: Keywords -->
+  <meta name="keywords" content="Saylor and The Captains, coastal rock band, Cocoa Beach band, Space Coast live music, Florida rock band, live band Brevard County, band for hire Florida" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Saylor and The Captains" />
 
   <!-- Netlify Identity (required for CMS) -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -212,10 +263,10 @@
     }
 
     .hero-logo {
-      width: 110px;
+      width: 80px;
       height: auto;
       border-radius: 0;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       display: block;
       filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
       animation: heroLogoFade 1s ease 0.2s both;
@@ -1449,18 +1500,18 @@
       <p id="booking-body">
         Saylor and the Captains are available for bars, festivals, private events and corporate bookings across Brevard County and the greater Space Coast. We bring the sound, the energy and the crowd.
       </p>
-      <a href="mailto:saylorandthecaptains@gmail.com" class="booking-email">
-        saylorandthecaptains@gmail.com
+      <a href="mailto:bookings@saylorandthecaptains.com" class="booking-email">
+        bookings@saylorandthecaptains.com
       </a>
       <br />
-      <a href="mailto:saylorandthecaptains@gmail.com" class="btn-primary">Send a Booking Inquiry</a>
+      <a href="mailto:bookings@saylorandthecaptains.com" class="btn-primary">Send a Booking Inquiry</a>
     </div>
   </section>
 
   <!-- ── FOOTER ────────────────────────────────────────────────────── -->
   <footer>
     <div class="footer-logo">Saylor and The Captains</div>
-    <p class="footer-meta">© 2025 Saylor and The Captains · Cocoa Beach, FL · All rights reserved</p>
+    <p class="footer-meta">© 2026 Saylor and The Captains · Cocoa Beach, FL · All rights reserved</p>
   </footer>
 
   <!-- ── DATA & JS ─────────────────────────────────────────────────── -->
@@ -1468,22 +1519,22 @@
         // ── Shows ─────────────────────────────────────────────────────────
     function loadShows() {
       renderShows([
-{ date: "2026-07-24", venue: "Nomads Cantina", location: "Melbourne, FL", time: "8:00 PM - 11:00 PM", ticket_url: "" },
-{ date: "2026-07-25", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "6:00 PM - 9:00 PM", ticket_url: "" },
-{ date: "2026-08-07", venue: "Mavericks Hangar Bar and Grill", location: "Satellite Beach, FL", time: "6:00 PM - 10:00 PM", ticket_url: "" },
-{ date: "2026-08-22", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "7:00 PM - 10:00 PM", ticket_url: "" },
-{ date: "2026-08-23", venue: "Hunkerdown Hideaway", location: "Cocoa Beach, FL", time: "1:00 PM - 5:00 PM", ticket_url: "" },
-{ date: "2026-09-05", venue: "Sandbar Sports Grill", location: "Cocoa Beach, FL", time: "4:00 PM - 8:00 PM", ticket_url: "" },
-{ date: "2026-09-07", venue: "Hunkerdown Hideaway", location: "Cocoa Beach, FL", time: "3:00 PM - 7:00 PM", ticket_url: "" },
-{ date: "2026-09-26", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "7:00 PM - 10:00 PM", ticket_url: "" },
-{ date: "2026-10-02", venue: "Sandbar Sports Grill", location: "Cocoa Beach, FL", time: "8:00 PM - 11:59 PM", ticket_url: "" },
-{ date: "2026-10-09", venue: "Mavericks Hangar Bar and Grill", location: "Satellite Beach, FL", time: "6:00 PM - 10:00 PM", ticket_url: "" },
-{ date: "2026-10-10", venue: "Hunkerdown Hideaway", location: "Cocoa Beach, FL", time: "7:00 PM - 11:00 PM", ticket_url: "" },
-{ date: "2026-10-23", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "7:00 PM - 10:00 PM", ticket_url: "" },
-{ date: "2026-11-06", venue: "Sandbar Sports Grill", location: "Cocoa Beach, FL", time: "8:00 PM - 11:59 PM", ticket_url: "" },
-{ date: "2026-11-15", venue: "Hunkerdown Hideaway", location: "Cocoa Beach, FL", time: "3:00 PM - 7:00 PM", ticket_url: "" },
-{ date: "2026-12-04", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "7:00 PM - 10:00 PM", ticket_url: "" }
-]);
+        { date: "2026-07-24", venue: "Nomads Cantina", location: "Melbourne, FL", time: "8:00 PM - 11:00 PM" },
+        { date: "2026-07-25", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "6:00 PM - 9:00 PM" },
+        { date: "2026-08-07", venue: "Mavericks Hangar Bar and Grill", location: "Satellite Beach, FL", time: "6:00 PM - 10:00 PM" },
+        { date: "2026-08-22", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "7:00 PM - 10:00 PM" },
+        { date: "2026-08-23", venue: "Hunkerdown Hideaway", location: "Cocoa Beach, FL", time: "1:00 PM - 5:00 PM" },
+        { date: "2026-09-05", venue: "Sandbar Sports Grill", location: "Cocoa Beach, FL", time: "4:00 PM - 8:00 PM" },
+        { date: "2026-09-07", venue: "Hunkerdown Hideaway", location: "Cocoa Beach, FL", time: "3:00 PM - 7:00 PM" },
+        { date: "2026-09-26", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "7:00 PM - 10:00 PM" },
+        { date: "2026-10-02", venue: "Sandbar Sports Grill", location: "Cocoa Beach, FL", time: "8:00 PM - 11:59 PM" },
+        { date: "2026-10-09", venue: "Mavericks Hangar Bar and Grill", location: "Satellite Beach, FL", time: "6:00 PM - 10:00 PM" },
+        { date: "2026-10-10", venue: "Hunkerdown Hideaway", location: "Cocoa Beach, FL", time: "7:00 PM - 11:00 PM" },
+        { date: "2026-10-23", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "7:00 PM - 10:00 PM" },
+        { date: "2026-11-06", venue: "Sandbar Sports Grill", location: "Cocoa Beach, FL", time: "8:00 PM - 11:59 PM" },
+        { date: "2026-11-15", venue: "Hunkerdown Hideaway", location: "Cocoa Beach, FL", time: "3:00 PM - 7:00 PM" },
+        { date: "2026-12-04", venue: "Ellie Mae's Tiki Bar", location: "Cape Canaveral, FL", time: "7:00 PM - 10:00 PM" }
+      ]);
     }
 
     // Quotes and gallery are hardcoded in HTML
@@ -1506,10 +1557,7 @@
         const d = new Date(show.date + 'T00:00:00');
         const month = months[d.getMonth()];
         const day = d.getDate();
-        const ticketBtn = show.ticket_url
-          ? `<a href="${show.ticket_url}" target="_blank" class="show-ticket">Tickets →</a>`
-          : `<span class="show-ticket">Free / Walk-in</span>`;
-        return `<div class="show-row">
+          return `<div class="show-row">
           <div class="show-date">
             <div class="month">${month}</div>
             <div class="day">${day}</div>
@@ -1518,7 +1566,6 @@
             <div class="venue">${show.venue}</div>
             <div class="details">${show.location} &nbsp;·&nbsp; ${show.time}</div>
           </div>
-          ${ticketBtn}
         </div>`;
       }).join('');
     }
